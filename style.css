@@ -592,6 +592,103 @@ body {
     min-width: 500px;
 }
 
+/* 表格行高调整 - 针对图片和文件列 */
+.data-table tr {
+    min-height: 50px;
+}
+
+.data-table td:first-child {
+    min-height: 80px;
+    padding: 10px 8px !important;
+}
+
+/* 图片预览区域样式调整 */
+.image-preview-large {
+    max-width: 120px;
+    max-height: 80px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    object-fit: contain;
+    background: var(--bg-tertiary);
+    display: block;
+    margin: 0 auto;
+}
+
+/* 图片容器样式 */
+.image-container {
+    position: relative;
+    width: 120px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    background: var(--bg-tertiary);
+}
+
+/* 图片更换按钮 */
+.image-change-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 152, 0, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.image-change-btn:hover {
+    background: #ff9800;
+    transform: scale(1.1);
+}
+
+/* 备注自动保存输入框 */
+.note-edit-auto {
+    width: 100% !important;
+    padding: 8px !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 6px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    min-height: 50px !important;
+    background: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    transition: border-color 0.3s !important;
+}
+
+.note-edit-auto:focus {
+    outline: none !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1) !important;
+}
+
+/* 移动端表格行高调整 */
+@media (max-width: 768px) {
+    .data-table td:first-child {
+        min-height: 70px;
+        padding: 8px 6px !important;
+    }
+    
+    .image-container {
+        width: 100px;
+        height: 70px;
+    }
+}
+
 .data-table th,
 .data-table td {
     border-bottom: 1px solid var(--border-color);
@@ -840,13 +937,39 @@ body {
     color: var(--text-light);
     font-size: 12px;
 }
-
+/* 经验总结显示样式 */
 .experience-content {
     color: var(--text-secondary);
     line-height: 1.5;
     white-space: pre-wrap;
     font-size: 13px;
+    max-height: 60px; /* 初始显示2行 */
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: relative;
 }
+
+.experience-content.expanded {
+    max-height: 1000px; /* 展开时足够大 */
+}
+
+.experience-content-toggle {
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+    display: inline-block;
+    background: var(--bg-tertiary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.experience-content-toggle:hover {
+    background: var(--bg-secondary);
+    border-color: var(--primary-color);
+}
+
 
 /* 状态栏下拉菜单 */
 .data-table select {
@@ -1240,5 +1363,76 @@ html {
         border: 1px solid #ccc;
         max-height: none;
         overflow: visible;
+    }
+}
+/* ==================== 固定大小文本区域 ==================== */
+.textarea-fixed {
+    resize: none !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+    height: 60px !important;
+    overflow-y: auto !important;
+    padding: 10px !important;
+    line-height: 1.4 !important;
+}
+
+.textarea-fixed:focus {
+    outline: none;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1) !important;
+}
+
+/* 备注说明专用样式（20字符以内） */
+.textarea-note {
+    resize: none !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    height: 50px !important;
+    overflow-y: auto !important;
+    padding: 8px !important;
+    line-height: 1.3 !important;
+    font-size: 13px !important;
+}
+
+/* 内容专用样式（15字符以内） */
+.textarea-content {
+    resize: none !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    height: 40px !important;
+    overflow-y: auto !important;
+    padding: 8px !important;
+    line-height: 1.2 !important;
+    font-size: 13px !important;
+}
+
+/* 经验总结弹性样式 */
+.textarea-experience {
+    resize: vertical !important;
+    min-height: 60px !important; /* 初始2行 */
+    max-height: 300px !important;
+    padding: 10px !important;
+    line-height: 1.5 !important;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .textarea-fixed {
+        min-height: 70px !important;
+        max-height: 70px !important;
+        height: 70px !important;
+        font-size: 16px !important;
+    }
+    
+    .textarea-note {
+        min-height: 60px !important;
+        max-height: 60px !important;
+        height: 60px !important;
+    }
+    
+    .textarea-content {
+        min-height: 50px !important;
+        max-height: 50px !important;
+        height: 50px !important;
     }
 }
