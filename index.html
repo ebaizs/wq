@@ -98,7 +98,7 @@
                 <div class="tab-content" id="progressTab">
                     <div class="form-group">
                         <label>工地名称</label>
-                        <input type="text" id="siteName" class="form-control" maxlength="15" placeholder="15字符" style="width: 100%;">
+                        <input type="text" id="siteName" class="form-control" maxlength="25" placeholder="25字符" style="width: 100%;">
                     </div>
                     <div class="form-row">
                         <div class="form-group">
@@ -118,23 +118,23 @@
                         <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
                     </div>
                     <button class="btn btn-primary" onclick="saveSiteInfo()">保存工地信息</button>
-                    
-                    <!-- 待办事项 -->
-                    <h4 style="margin-top: 30px;">待办事项</h4>
+                 
+                </div>
+                <div class="tab-content" id="todoTab">
+                    <h4>待办事项</h4>
                     <div class="form-group">
                         <label>事项名称</label>
                         <input type="text" id="todoItem" maxlength="20" placeholder="20字符以内">
                     </div>
                     <div class="form-group" style="flex: 2;">
-                        <label>备注说明（30字符以下）</label>
-                        <textarea id="todoNote" maxlength="30" placeholder="请输入30个以下字符的备注说明"></textarea>
+                        <label>备注说明（20字符以内）</label>
+                        <textarea id="todoNote" maxlength="20" class="textarea-note" placeholder="请输入20个以下字符的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="addTodo()">添加待办</button>
                     <div class="data-table-container">
                         <div id="todoList"></div>
                     </div>
                 </div>
-
                 <div class="tab-content" id="expenseTab">
                     <h4>支出记录</h4>
                     <div class="form-row">
@@ -154,8 +154,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（30字符以下）</label>
-                        <textarea id="expenseNote" maxlength="30" placeholder="请输入30个以下字符的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="expenseNote" maxlength="20" class="textarea-note" placeholder="请输入20个以下字符的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="addExpense()">添加支出</button>
                     <div class="data-table-container">
@@ -166,12 +166,12 @@
                 <div class="tab-content" id="requirementTab">
                     <h4>客户要求</h4>
                     <div class="form-group">
-                        <label>要求内容（10字符以下）</label>
-                        <textarea id="requirementContent" maxlength="10" placeholder="请输入10个字符以下的要求内容"></textarea>
+                        <label>要求内容（15字符以下）</label>
+                        <textarea id="requirementContent" maxlength="15" class="textarea-content" placeholder="请输入15个字符以下的要求内容"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（40字符以下）</label>
-                        <textarea id="requirementNote" maxlength="40" placeholder="请输入40个字符以下的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="requirementNote" maxlength="20" class="textarea-note" placeholder="请输入20个字符以下的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="addRequirement()">添加要求</button>
                     <div class="data-table-container">
@@ -183,11 +183,11 @@
                     <h4>待维修项</h4>
                     <div class="form-group">
                         <label>维修内容（10字符以下）</label>
-                        <textarea id="repairContent" maxlength="10" placeholder="请输10个字符以下的维修内容"></textarea>
+                        <textarea id="repairContent" maxlength="10" class="textarea-content" placeholder="请输10个字符以下的维修内容"></textarea>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（40字符以下）</label>
-                        <textarea id="repairNote" maxlength="40" placeholder="请输40个字符以下的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="repairNote" maxlength="20" class="textarea-note" placeholder="请输20个字符以下的备注说明"></textarea>
                     </div>
                     <div class="form-group">
                         <label>上传照片</label>
@@ -226,8 +226,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（40字符以下）</label>
-                        <textarea id="workerNote" maxlength="40" placeholder="请输入40个以下字符的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="workerNote" maxlength="20" class="textarea-note" placeholder="请输入20个以下字符的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="addWorker()">添加工人</button>
                     <div class="data-table-container">
@@ -329,8 +329,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（40字符以下）</label>
-                        <textarea id="addRemoveNote" maxlength="40" placeholder="请输入40个以下字符的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="addRemoveNote" maxlength="20" class="textarea-note" placeholder="请输入20个以下字符的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="addAddRemoveItem()">添加增减项</button>
                     <div class="data-table-container">
@@ -362,8 +362,8 @@
                         <div id="drawingPreview"></div>
                     </div>
                     <div class="form-group">
-                        <label>备注说明（40字符以下）</label>
-                        <textarea id="drawingNote" maxlength="40" placeholder="请输入40个字符以下的备注说明"></textarea>
+                        <label>备注说明（20字符以下）</label>
+                        <textarea id="drawingNote" maxlength="20" class="textarea-note" placeholder="请输入20个字符以下的备注说明"></textarea>
                     </div>
                     <button class="btn btn-success" onclick="uploadDrawing()">上传图纸</button>
                     <div class="data-table-container">
@@ -375,7 +375,7 @@
                     <h4>经验总结</h4>
                     <div class="form-group">
                         <label>经验总结内容</label>
-                        <textarea id="experienceContent" rows="8" placeholder="请输入项目经验总结..."></textarea>
+                        <textarea id="experienceContent" rows="2" class="textarea-experience" placeholder="请输入项目经验总结..."></textarea>
                     </div>
                     <button class="btn btn-primary" onclick="addExperience()">添加总结</button>
                     <div id="experienceList"></div>
